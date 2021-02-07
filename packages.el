@@ -77,8 +77,8 @@
   (add-hook 'jupyter-repl-mode-hook 'smartparens-mode))
 
 (defun jupyter/post-init-org ()
-;;   ;; (with-eval-after-load 'org (jupyter/ox-ipynb-emacs-jupyter)))
-  (add-hook 'org-mode-hook #'jupyter/ox-ipynb-emacs-jupyter))
+  (with-eval-after-load  'ox-ipynb
+    (add-hook 'org-mode-hook #'jupyter/ox-ipynb-emacs-jupyter)))
 
 (defun jupyter/init-ox-ipynb ()
   (use-package ox-ipynb

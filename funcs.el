@@ -1,5 +1,4 @@
 (defun jupyter/ox-ipynb-emacs-jupyter ()
-  (require 'ox-ipynb)
     (cl-loop
        for (kernel . (_dir . spec)) in (jupyter-available-kernelspecs)
        for lang = (plist-get spec :language)
